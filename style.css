@@ -1,29 +1,28 @@
-/* Reset */
+/* Reset and base styles */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-/* Body - dark theme */
 body {
     font-family: 'Poppins', sans-serif;
-    background: #0d0d0d; /* black background */
-    color: #f5f5f5;
+    background: #f4f4f9;
+    color: #333;
     line-height: 1.6;
 }
 
-/* Header with gradient */
+/* Gradient header */
 header {
     background: linear-gradient(90deg, #6a11cb, #2575fc, #ff4e91);
     color: white;
     padding: 20px 0;
     text-align: center;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.4);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
 }
 
 header h1 {
-    font-size: 2.5rem;
+    font-size: 2rem;
     margin-bottom: 5px;
 }
 
@@ -38,28 +37,20 @@ header nav a:hover {
     text-decoration: underline;
 }
 
-/* Sections */
+/* Section styling */
 section {
     padding: 50px 20px;
-    max-width: 1000px;
+    max-width: 900px;
     margin: auto;
 }
 
-/* Gradient section styling */
-.gradient-section {
-    background: linear-gradient(135deg, #6a11cb, #2575fc, #ff4e91);
-    color: white;
-    border-radius: 12px;
-    padding: 50px 20px;
-}
-
-/* Profile Image */
+/* About section */
 .profile-pic {
     width: 160px;
     height: 160px;
     border-radius: 50%;
-    border: 5px solid white;
-    box-shadow: 0 4px 15px rgba(255, 255, 255, 0.3);
+    border: 5px solid #fff;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
     margin-bottom: 20px;
 }
 
@@ -78,26 +69,25 @@ ul li {
     width: 200px;
     text-align: center;
     font-weight: 500;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
 }
 
 /* Project cards */
 .project-card {
-    background: #1a1a1a;
+    background: white;
     border-radius: 15px;
     padding: 20px;
     margin: 15px auto;
-    box-shadow: 0 6px 20px rgba(0,0,0,0.6);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
 }
 
 .project-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 8px 25px rgba(255, 78, 145, 0.4);
 }
 
-/* Buttons */
-.btn, .btn-outline {
+/* Button */
+.btn {
     display: inline-block;
     background: linear-gradient(90deg, #2575fc, #6a11cb, #ff4e91);
     color: white;
@@ -108,16 +98,15 @@ ul li {
     transition: opacity 0.3s ease;
 }
 
-.btn:hover, .btn-outline:hover {
-    opacity: 0.85;
+.btn:hover {
+    opacity: 0.9;
 }
 
 /* Footer */
 footer {
-    background: #111;
+    background: #222;
     color: white;
     padding: 15px;
     text-align: center;
     font-size: 0.9rem;
-    margin-top: 50px;
 }
