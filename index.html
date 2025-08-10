@@ -1,64 +1,140 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Praveena | Portfolio</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Praveena | Portfolio</title>
+
+  <!-- Google font -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+  <!-- Boxicons (icons) -->
+  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<header>
-    <h1>Praveena</h1>
-    <nav>
+  <!-- Animated gradient background layers -->
+  <div class="bg-gradient"></div>
+  <div class="bg-gradient blur"></div>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="brand">
+        <h1>Praveena</h1>
+        <p class="tag">ECE Student • Web Developer Intern</p>
+      </div>
+
+      <nav class="nav">
         <a href="#about">About</a>
         <a href="#skills">Skills</a>
         <a href="#projects">Projects</a>
-        <a href="#contact">Contact</a>
-    </nav>
-</header>
+        <a href="#contact" class="btn-light">Contact</a>
+      </nav>
 
-<section id="about">
-    <img src="profile.png" alt="Praveena" class="profile-pic">
-    <h2>About Me</h2>
-    <p>I am an ECE student passionate about web development, IoT, and learning new technologies. Currently interning at CodSoft.</p>
-</section>
-
-<section id="skills">
-    <h2>Skills</h2>
-    <ul>
-        <li>HTML & CSS</li>
-        <li>JavaScript</li>
-        <li>Python</li>
-        <li>IoT Projects</li>
-    </ul>
-</section>
-
-<section id="projects">
-    <h2>Projects</h2>
-    <div class="project-card">
-        <h3>Personal Portfolio</h3>
-        <p>A responsive portfolio website.</p>
+      <button class="menu-btn" aria-label="Open menu"><i class="bx bx-menu"></i></button>
     </div>
-    <div class="project-card">
-        <h3>IoT Accident Detection</h3>
-        <p>GPS + GSM based emergency alert system.</p>
+  </header>
+
+  <main>
+    <!-- HERO -->
+    <section id="home" class="hero">
+      <div class="container hero-grid">
+        <div class="hero-text">
+          <h2>Hello, I'm <span class="accent">Praveena</span></h2>
+          <p>I build web projects, work with IoT, and learn new tech every day. Intern at CodSoft — crafting clean code & UI.</p>
+          <div class="hero-actions">
+            <a href="#projects" class="btn">View Projects</a>
+            <a href="resume.pdf" class="btn-outline" download>Download Resume</a>
+          </div>
+        </div>
+
+        <div class="hero-card">
+          <!-- Put your image file at Task1/images/profile.jpg -->
+          <img src="images/profile.jpg" alt="Praveena" class="profile-pic">
+          <div class="info">
+            <h3>Praveena</h3>
+            <p>ECE • Web Dev • IoT</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about" class="section">
+      <div class="container">
+        <h2 class="section-title">About Me</h2>
+        <p class="lead">I am an ECE student passionate about web development, embedded systems and problem solving. I enjoy converting ideas into real projects — simple, usable and beautiful.</p>
+      </div>
+    </section>
+
+    <!-- SKILLS -->
+    <section id="skills" class="section">
+      <div class="container">
+        <h2 class="section-title">Skills</h2>
+        <div class="skills-grid">
+          <div class="skill-pill">HTML</div>
+          <div class="skill-pill">CSS</div>
+          <div class="skill-pill">JavaScript</div>
+          <div class="skill-pill">Python</div>
+          <div class="skill-pill">IoT (Arduino)</div>
+          <div class="skill-pill">Git & GitHub</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section id="projects" class="section">
+      <div class="container">
+        <h2 class="section-title">Projects</h2>
+        <div class="projects-grid">
+          <article class="project-card">
+            <h3>Personal Portfolio</h3>
+            <p>Responsive portfolio built with HTML & CSS — this page. Clean design, GitHub Pages hosted.</p>
+            <div class="project-links">
+              <a href="#" class="link">View</a>
+              <a href="#" class="link">Code</a>
+            </div>
+          </article>
+
+          <article class="project-card">
+            <h3>IoT Accident Detection</h3>
+            <p>GPS + GSM emergency alert system. Prototype using NEO-6M and SIM800L modules.</p>
+            <div class="project-links">
+              <a href="#" class="link">View</a>
+              <a href="#" class="link">Code</a>
+            </div>
+          </article>
+
+          <article class="project-card">
+            <h3>Landing Page</h3>
+            <p>A clean landing page with smooth responsive layout and modern CTAs.</p>
+            <div class="project-links">
+              <a href="#" class="link">View</a>
+              <a href="#" class="link">Code</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="section">
+      <div class="container">
+        <h2 class="section-title">Contact</h2>
+        <p>Mail: <a href="mailto:your.email@example.com" class="link">your.email@example.com</a></p>
+        <p>Phone: +91 1234567890</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>© 2025 Praveena • Built with ❤️ • <a href="https://github.com/Praveena-K19/CODSOFT" target="_blank" class="link">GitHub</a></p>
     </div>
-</section>
+  </footer>
 
-<section id="contact">
-    <h2>Contact</h2>
-    <p>Email: praveenakalai@gmail.com</p>
-    <p>Phone: +91 9894373328</p>
-    <a href="resume.pdf" class="btn" download>Download Resume</a>
-</section>
-
-<footer>
-    <p>© 2025 Praveena. All Rights Reserved.</p>
-</footer>
-
+  <script src="script.js"></script>
 </body>
 </html>
-
-
-
