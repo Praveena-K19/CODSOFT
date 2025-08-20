@@ -1,0 +1,50 @@
+import pandas as pd
+import matplotlib.pyplot as plt
+from reportlab.lib.pagesizes import A4
+from reportlab.platypus import SimpleDocTemplate, Paragraph, Spacer, Image
+from reportlab.lib.styles import getSampleStyleSheet
+
+# ---------- Step 1: Load Data ----------
+# Example: survey.csv with columns ["Age", "Gender", "Income", "Region"]
+df = pd.read_csv("survey.csv")
+
+# ---------- Step 2: Data Cleaning ----------
+df = df.drop_duplicates()
+df = df.fillna(df.mean(numeric_only=True))  # fill numeric NaN with mean
+
+# ---------- Step 3: Analysis ----------
+summary = df.describe(include="all")
+avg_income = df["Income"].mean()
+income_by_region = df.groupby("Region")["Income"].mean()
+
+# ---------- Step 4: Visualization ----------
+plt.figure(figsize=(6,4))
+income_by_region.plot(kind="bar")
+plt.title("Average Income by Region")
+plt.ylabel("Income")
+plt.tight_layout()
+plt.savefig("income_chart.png")
+plt.close()
+
+# ---------- Step 5: PDF Report ----------
+doc = SimpleDocTemplate("Survey_Report.pdf", pagesize=A4)
+styles = getSampleStyleSheet()
+story = []
+
+story.append(Paragraph("Survey Data Report", styles["Title"]))
+story.append(Spacer(1, 12))
+
+story.append(Paragraph(f"Total records analysed: {len(df)}", styles["Normal"]))
+story.append(Paragraph(f"Average Income: {avg_income:.2f}", styles["Normal"]))
+story.append(Spacer(1, 12))
+
+story.append(Paragraph("Descriptive Statistics:", styles["Heading2"]))
+story.append(Paragraph(summary.to_html(), styles["Normal"]))  # summary as HTML
+
+story.append(Spacer(1, 12))
+story.append(Paragraph("Average Income by Region:", styles["Heading2"]))
+story.append(Image("income_chart.png", width=400, height=250))
+
+doc.build(story)
+
+print("✅ Survey_Report.pdf generated successfully!")
